@@ -1,0 +1,47 @@
+body {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+
+html, body {
+    height: 100%;
+}
+
+.map_canvas {
+	width: 300px;
+	height: 300px;
+}
+	
+.jumbotron {
+	background: #336699;
+    background-image: url(../img/NASymbol1.gif);
+	background-size: auto 100%;
+    background-repeat: no-repeat;
+	background-position: right;
+}
+
+.jumbotron h1{
+    color: #fff;
+}
+
+.jumbotron h3{
+    color: #fff;
+}
+
+.ui-slider-tip {
+	width: 44px !important;
+	}
