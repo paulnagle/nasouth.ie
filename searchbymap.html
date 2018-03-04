@@ -10,87 +10,54 @@
 
     <title>Narcotics Anonymous Southern Area of Ireland</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="js/bootstrap-3.3.2/css/bootstrap.min.css" />
-    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/theme.css" >
+  	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css" />
+  	<link rel="stylesheet" href="css/MarkerCluster.css" />
+  	<link rel="stylesheet" href="css/MarkerCluster.Default.css" />
+  	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
+  	<link rel="stylesheet" href="css/jquery-ui-slider-pips.css" />
 
-    <!-- Custom styles for this template -->
-    <link href="css/theme.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
 
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-	<link rel="stylesheet" href="css/MarkerCluster.css" />
-	<link rel="stylesheet" href="css/MarkerCluster.Default.css" />
-	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
-	<link rel="stylesheet" href="css/jquery-ui-slider-pips.css" />
-
-	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-	<script src="js/leaflet.markercluster.js"></script>
-	<script src="js/Leaflet.MakiMarkers.js"></script>
-	<script src="js/spin.min.js"></script>
-	<script src="js/leaflet.spin.js"></script>
-	<script src="js/jquery-ui-slider-pips.js"></script>
+  	<script src="js/leaflet.markercluster.js"></script>
+  	<script src="js/Leaflet.MakiMarkers.js"></script>
+  	<script src="js/spin.min.js"></script>
+  	<script src="js/leaflet.spin.js"></script>
+  	<script src="js/jquery-ui-slider-pips.js"></script>
     <script src="js/map.js"></script>
-	<script src="js/bootstrap-3.3.2/js/bootstrap.min.js"></script>
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script src="js/meeting-search.js"></script>
 
-  ga('create', 'UA-20091679-1', 'auto');
-  ga('send', 'pageview');
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-</script>
+      ga('create', 'UA-20091679-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
   </head>
 
   <body role="document">
+    <div id="nav_holder"></div>
+    <script>
+      drawNavigation();
+    </script>
 
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Welcome</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Find a Meeting <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="searchbyday.html">Search By Day</a></li>
-                <li><a href="searchbymap.html">Search By Map</a></li>
-                <li><a href="searchbycounty.html">Search By County</a></li>
-              </ul>
-            </li>
-            <li><a href="events.html">Events & Fundraisers</a></li>
-			<li><a href="usefullinks.html">Useful Links</a></li>
-			<li><a href="forprofessionals.html">For Professionals</a></li>
-			<li><a href="downloads.html">Downloads</a></li>
-			<li><a href="history.html">History</a></li>
-			<li><a href="sasc.html">SASC</a></li>
-
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
-    <div class="container theme-showcase" role="main">
-		<div class="jumbotron">
-			<h1>Narcotics Anonymous</h1>
-			<h3>Southern Area of Ireland</h3>
-		</div>
-
+    <div class='container theme-showcase' role='main'>
+    <div class='jumbotron'>
+    <h1>Narcotics Anonymous</h1>
+    <h3>Southern Area of Ireland</h3>
+    </div>
 
 		<div> <!--- /Page Content  -->
+
+
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">NA Meetings Map</h3>
@@ -102,6 +69,29 @@
 		</div>
 
 		<h4>Map search results, listed by day</h4>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="sunday-tab" data-toggle="tab"  href="#sunday" role="tab" aria-controls="sunday" aria-selected="true">Sunday</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="monday-tab" data-toggle="tab"  href="#monday" role="tab" aria-controls="monday" aria-selected="true">Monday</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="tuesday-tab" data-toggle="tab"  href="#tuesday" role="tab" aria-controls="tuesday" aria-selected="true">Tuesday</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="wednesday-tab" data-toggle="tab"  href="#wednesday" role="tab" aria-controls="wednesday" aria-selected="true">Wednesday</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="thursday-tab" data-toggle="tab"  href="#thursday" role="tab" aria-controls="thursday" aria-selected="true">Thursday</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="friday-tab" data-toggle="tab"  href="#friday" role="tab" aria-controls="friday" aria-selected="true">Friday</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="saturday-tab" data-toggle="tab"  href="#saturday" role="tab" aria-controls="saturday" aria-selected="true">Saturday</a>
+      </li>
+    </ul>
 		<div id="list_result" ></div>
 		<br>
 		<h4>A list of meeting format abbreviations</h4>
@@ -110,75 +100,26 @@
 		<script>
 			mapInit();
 		</script>
-			<div class="row">
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">iPhone / iPad App</h3>
-                        </div>
-                        <div class="panel-body">
-							<div class="row">
-								<div class="col-md-6 col-sm-6">
-								We have an app for iPhones and iPads available.<br>
-								</div>
-								<div class="col-md-6 col-sm-6">
-									<a href="https://itunes.apple.com/app/narcotics-anonymous-ireland/id1084048094">
-									<img src="img/apple.png" class="img-responsive" alt="NA Ireland iPhone iPad App" /> </a>
-								</div>
-							</div>
-						</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Android App</h3>
-                        </div>
-                        <div class="panel-body">
-							<div class="row">
-								<div class="col-md-6 col-sm-6">
-								We also have an app available for Android tablets and phones<br>
-								</div>
-								<div class="col-md-6 col-sm-6">
-									<a href="https://play.google.com/store/apps/details?id=ie.nasouth.android.naireland">
-									<img src="img/android.png" class="img-responsive" alt="NA Ireland Android App" /> </a>
-								</div>
-							</div>
-						</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-warning">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Printable Meetings List</h3>
-                        </div>
-                        <div class="panel-body">
-<p>Southern Area printable Meetings List PDF.
-<a href="http://nasouth.ie/meetingslist/?current-meeting-list=1" oncontextmenu="return false;"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>
-</p>
-<p>Irish Region printable Meetings List PDF.
-<a href="http://www.na-ireland.org/?current-meeting-list=1" oncontextmenu="return false;"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></div>
-</p>
-                    </div>
-                </div>
-
-		</div>  <!--- /Page Content  -->
 
 
+    </div>  <!--- /Page Content  -->
 
+    <div id="phoneline_card"></div>
+    <script>
+      drawPhonelineCard();
+    </script>
 
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">Phoneline</h3>
-			</div>
-			<div class="panel-body">
-				<strong>Phoneline : <a href="tel:0871386120">087 – 138 6120</a></strong><br>
-				<strong>Monday - Friday 6pm - 9pm</strong><br>
-				<strong>Email address : <a href="mailto:info@nasouth.ie">info@nasouth.ie</a></strong
-			</div>
-		</div>
+    <div id="links_card"></div>
+    <script>
+      drawLinkCards();
+    </script>
 
     </div> <!-- /container -->
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 
   </body>
 </html>

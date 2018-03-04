@@ -11,11 +11,13 @@
     <title>Narcotics Anonymous Southern Area of Ireland</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="js/bootstrap-3.3.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    <!-- Bootstrap theme -->
     <!-- Bootstrap theme -->
 
     <!-- Custom styles for this template -->
     <link href="css/theme.css" rel="stylesheet">
+    <script src="js/meeting-search.js"></script>
+
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -26,53 +28,21 @@
   ga('send', 'pageview');
 
 </script>
-  </head>
+</head>
 
-  <body role="document">
+<body role="document">
+  <div id="nav_holder"></div>
+  <script>
+    drawNavigation();
+  </script>
 
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+  <div class='container theme-showcase' role='main'>
+  <div class='jumbotron'>
+  <h1>Narcotics Anonymous</h1>
+  <h3>Southern Area of Ireland</h3>
+  </div>
 
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Welcome</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Find a Meeting <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="searchbyday.html">Search By Day</a></li>
-                <li><a href="searchbymap.html">Search By Map</a></li>
-                <li><a href="searchbycounty.html">Search By County</a></li>
-              </ul>
-            </li>
-            <li><a href="events.html">Events & Fundraisers</a></li>
-			<li><a href="usefullinks.html">Useful Links</a></li>
-			<li><a href="forprofessionals.html">For Professionals</a></li>
-			<li><a href="downloads.html">Downloads</a></li>
-			<li><a href="history.html">History</a></li>
-			<li><a href="sasc.html">SASC</a></li>
-
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
-    <div class="container theme-showcase" role="main">
-		<div class="jumbotron">
-			<h1>Narcotics Anonymous</h1>
-			<h3>Southern Area of Ireland</h3>
-		</div>
-
-
-		<div> <!--- /Page Content  -->
+  <div> <!--- /Page Content  -->
 
 		<p>Here is a <a href="docs/group-report-form.pdf">Group Report Form</a> that you can download, print off and fill in. Bring the completed form along to the monthly Area meetings on the second Sunday of the month, in the YMCA building on Marlboro St., Cork (unless otherwise indicated).</p>
 
@@ -80,40 +50,70 @@
 
 <h1>Area Meeting Minutes</h1>
 
-<div id="accordion" class="panel-group">
+<div id="accordion">
 
-  <div class="panel panel-default">
-       <div class="panel-heading">
-           <h4 class="panel-title">
-               <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">2017</a>
-           </h4>
-       </div>
-       <div id="collapseOne" class="panel-collapse collapse in">
-           <div class="panel-body">
-              <a href="docs/NASASCJAN17.pdf">January 2017</a><br>
-              <a href="docs/NASASCFEB17.pdf">February 2017</a><br>
-              <a href="docs/NASASCMAR17.pdf">March 2017</a><br>
-              <a href="docs/NASASCAPR17.pdf">April 2017</a><br>
-              <a href="docs/NASASCMAY17.pdf">May 2017</a><br>
-              <a href="docs/NASASCJUN17.pdf">June 2017</a><br>
-              <a href="docs/NASASCJUL17.pdf">July 2017</a><br>
-              <a href="docs/NASASCAUG17.pdf">August 2017</a><br>
-              <a href="docs/NASASCSEP17.pdf">September 2017</a><br>
-              <a href="">October 2017</a><br>
-              <a href="">November 2017</a><br>
-              <a href="">December 2017</a><br>
-           </div>
-       </div>
-   </div>
+  <div class="card" id="2018Heading">
+    <div class="card-heading">
+      <h4 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#2018" aria-expanded="true" aria-controls="2018">
+        2018
+        </button>
+      </h4>
+    </div>
+    <div id="2018" class="collapse" aria-labelledby="2018Heading" data-parent="#accordion">
+      <div class="card-body">
+        <a href="">January 2018</a><br>
+        <a href="">February 2018</a><br>
+        <a href="">March 2018</a><br>
+        <a href="">April 2018</a><br>
+        <a href="">May 2018</a><br>
+        <a href="">June 2018</a><br>
+        <a href="">July 2018</a><br>
+        <a href="">August 2018</a><br>
+        <a href="">September 2018</a><br>
+        <a href="">October 2018</a><br>
+        <a href="">November 2018</a><br>
+        <a href="">December 2018</a><br>
+      </div>
+    </div>
+  </div>
 
-   <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2016</a>
-            </h4>
-        </div>
-        <div id="collapseTwo" class="panel-collapse collapse">
-            <div class="panel-body">
+  <div class="card" id="2017Heading">
+    <div class="card-heading">
+      <h4 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#2017" aria-expanded="true" aria-controls="2017">
+        2017
+        </button>
+      </h4>
+    </div>
+    <div id="2017" class="collapse" aria-labelledby="2017Heading" data-parent="#accordion">
+      <div class="card-body">
+        <a href="docs/NASASCJAN17.pdf">January 2017</a><br>
+        <a href="docs/NASASCFEB17.pdf">February 2017</a><br>
+        <a href="docs/NASASCMAR17.pdf">March 2017</a><br>
+        <a href="docs/NASASCAPR17.pdf">April 2017</a><br>
+        <a href="docs/NASASCMAY17.pdf">May 2017</a><br>
+        <a href="docs/NASASCJUN17.pdf">June 2017</a><br>
+        <a href="docs/NASASCJUL17.pdf">July 2017</a><br>
+        <a href="docs/NASASCAUG17.pdf">August 2017</a><br>
+        <a href="docs/NASASCSEP17.pdf">September 2017</a><br>
+        <a href="">October 2017</a><br>
+        <a href="">November 2017</a><br>
+        <a href="">December 2017</a><br>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="2016Heading">
+    <div class="card-heading">
+      <h4 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#2016" aria-expanded="true" aria-controls="2016">
+        2016
+        </button>
+      </h4>
+    </div>
+    <div id="2016" class="collapse" aria-labelledby="2016Heading" data-parent="#accordion">
+      <div class="card-body">
               <a href="docs/NASASCJAN16.pdf">January 2016</a><br>
               <a href="docs/NASASCFEB16.pdf">February 2016</a><br>
               <a href="docs/NASASCMAR16.pdf">March 2016</a><br>
@@ -132,14 +132,16 @@
     </div>
 
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">2015</a>
-            </h4>
-        </div>
-        <div id="collapseThree" class="panel-collapse collapse">
-            <div class="panel-body">
+    <div class="card" id="2015Heading">
+      <div class="card-heading">
+        <h4 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#2015" aria-expanded="true" aria-controls="2015">
+          2015
+          </button>
+        </h4>
+      </div>
+      <div id="2015" class="collapse" aria-labelledby="2015Heading" data-parent="#accordion">
+        <div class="card-body">
               <a href="docs/NASASCJAN15.pdf">January 2015</a><br>
               <a href="docs/NASASCFEB15.pdf">February 2015</a><br>
               <a href="docs/NASASCMAR15.pdf">March 2015</a><br>
@@ -156,14 +158,18 @@
             </div>
         </div>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">2014</a>
-            </h4>
-        </div>
-        <div id="collapseFour" class="panel-collapse collapse">
-            <div class="panel-body">
+
+
+    <div class="card" id="2014Heading">
+      <div class="card-heading">
+        <h4 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#2014" aria-expanded="true" aria-controls="2014">
+          2014
+          </button>
+        </h4>
+      </div>
+      <div id="2014" class="collapse" aria-labelledby="2014Heading" data-parent="#accordion">
+        <div class="card-body">
               <a href="docs/NASASCJAN14.pdf">January 2014</a><br>
               <a href="#">February 2014</a><br>
               <a href="#">March 2014</a><br>
@@ -179,14 +185,18 @@
             </div>
         </div>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">2013</a>
-            </h4>
-        </div>
-        <div id="collapseFive" class="panel-collapse collapse">
-            <div class="panel-body">
+
+
+    <div class="card" id="2013Heading">
+      <div class="card-heading">
+        <h4 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#2013" aria-expanded="true" aria-controls="2013">
+          2013
+          </button>
+        </h4>
+      </div>
+      <div id="2013" class="collapse" aria-labelledby="2013Heading" data-parent="#accordion">
+        <div class="card-body">
               <a href="docs/NASASCJAN13.pdf">January 2013</a><br>
               <a href="docs/NASASCFEB13.pdf">February 2013</a><br>
               <a href="docs/NASASCMAR13.pdf">March 2012</a><br>
@@ -201,14 +211,18 @@
             </div>
         </div>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">2012</a>
-            </h4>
-        </div>
-        <div id="collapseSix" class="panel-collapse collapse">
-            <div class="panel-body">
+
+
+    <div class="card" id="2012Heading">
+      <div class="card-heading">
+        <h4 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#2012" aria-expanded="true" aria-controls="2012">
+          2012
+          </button>
+        </h4>
+      </div>
+      <div id="2012" class="collapse" aria-labelledby="2012Heading" data-parent="#accordion">
+        <div class="card-body">
               <a href="docs/NASASCJAN12.pdf">January 2012</a><br>
               <a href="docs/NASASCFEB12.pdf">February 2012</a><br>
               <a href="docs/NASASCMAR12.pdf">March 2012</a><br>
@@ -220,14 +234,17 @@
             </div>
         </div>
     </div>
-	    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">2011</a>
-            </h4>
-        </div>
-        <div id="collapseSeven" class="panel-collapse collapse">
-            <div class="panel-body">
+
+    <div class="card" id="2011Heading">
+      <div class="card-heading">
+        <h4 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#2011" aria-expanded="true" aria-controls="2011">
+          2011
+          </button>
+        </h4>
+      </div>
+      <div id="2011" class="collapse" aria-labelledby="2011Heading" data-parent="#accordion">
+        <div class="card-body">
               <a href="docs/NASASCJAN11.pdf">January 2011</a><br>
               <a href="docs/NASASCFEB11.pdf">February 2011</a><br>
               <a href="docs/NASASCMAR11.pdf">March 2011</a><br>
@@ -239,14 +256,18 @@
             </div>
         </div>
     </div>
-	    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">2010</a>
-            </h4>
-        </div>
-        <div id="collapseEight" class="panel-collapse collapse">
-            <div class="panel-body">
+
+
+    <div class="card" id="2010Heading">
+      <div class="card-heading">
+        <h4 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#2010" aria-expanded="true" aria-controls="2010">
+          2010
+          </button>
+        </h4>
+      </div>
+      <div id="2010" class="collapse" aria-labelledby="2010Heading" data-parent="#accordion">
+        <div class="card-body">
               <a href="docs/NASASCJAN2010.pdf">January 2010</a><br>
               <a href="docs/NASASCFEB2010.pdf">February 2010</a><br>
               <a href="docs/NASASCMAR2010.pdf">March 2010</a><br>
@@ -262,14 +283,18 @@
             </div>
         </div>
     </div>
-	<div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine">2009</a>
-            </h4>
-        </div>
-        <div id="collapseNine" class="panel-collapse collapse">
-            <div class="panel-body">
+
+
+    <div class="card" id="2009Heading">
+      <div class="card-heading">
+        <h4 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#2009" aria-expanded="true" aria-controls="2009">
+          2009
+          </button>
+        </h4>
+      </div>
+      <div id="2009" class="collapse" aria-labelledby="2009Heading" data-parent="#accordion">
+        <div class="card-body">
               <a href="docs/NASASCJAN09.pdf">January 2009</a><br>
               <a href="docs/NASASCFEB09.pdf">Febuary 2009</a><br>
               <a href="docs/NASASCMAR09.pdf">March 2009</a><br>
@@ -286,14 +311,18 @@
             </div>
         </div>
     </div>
-	<div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTen">2008</a>
-            </h4>
-        </div>
-        <div id="collapseTen" class="panel-collapse collapse">
-            <div class="panel-body">
+
+
+    <div class="card" id="2008Heading">
+      <div class="card-heading">
+        <h4 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#2008" aria-expanded="true" aria-controls="2008">
+          2008
+          </button>
+        </h4>
+      </div>
+      <div id="2008" class="collapse" aria-labelledby="2008Heading" data-parent="#accordion">
+        <div class="card-body">
               <a href="docs/NASASCJANUARY08.doc">January 2008</a><br>
               <a href="docs/NASASCFEB08.pdf">Febuary 2008</a><br>
               <a href="docs/NASASCMAR08.pdf">March 2008</a><br>
@@ -309,14 +338,18 @@
             </div>
         </div>
     </div>
-	<div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">2007</a>
-            </h4>
-        </div>
-        <div id="collapseEleven" class="panel-collapse collapse">
-            <div class="panel-body">
+
+
+    <div class="card" id="2008Heading">
+      <div class="card-heading">
+        <h4 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#2008" aria-expanded="true" aria-controls="2008">
+          2008
+          </button>
+        </h4>
+      </div>
+      <div id="2008" class="collapse" aria-labelledby="2008Heading" data-parent="#accordion">
+        <div class="card-body">
       				<a href="docs/NASASCDJANUARY07.doc">January 2007</a><br>
       				<a href="docs/NASASFEBUARY07.doc">February 2007</a><br>
       				<a href="docs/NASASCMARCH07.doc">March 2007</a><br>
@@ -332,14 +365,17 @@
             </div>
         </div>
     </div>
-	<div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve">2006</a>
-            </h4>
-        </div>
-        <div id="collapseTwelve" class="panel-collapse collapse">
-            <div class="panel-body">
+
+    <div class="card" id="2006Heading">
+      <div class="card-heading">
+        <h4 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#2006" aria-expanded="true" aria-controls="2006">
+          2006
+          </button>
+        </h4>
+      </div>
+      <div id="2006" class="collapse" aria-labelledby="2006Heading" data-parent="#accordion">
+        <div class="card-body">
 				<a href="docs/NASASCNOVEMBER06.doc">November 2006</a><br>
 				<a href="docs/NASASCDECEMBER06.doc">December 2006</a><br>
 			</div>
@@ -349,23 +385,26 @@
 </div>	<!--- /Accordian  -->
 
 <div class="well well-sm">The Minutes are in PDF format. You can use <a href="https://get.adobe.com/reader/">Adobe PDF Reader</a> to view them</div>
-		</div>  <!--- /Page Content  -->
+</div>  <!--- /Page Content  -->
 
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">Phoneline</h3>
-			</div>
-			<div class="panel-body">
-				<strong>Phoneline : <a href="tel:0871386120">087 – 138 6120</a></strong><br>
-				<strong>Monday - Friday 6pm - 9pm</strong><br>
-				<strong>Email address : <a href="mailto:info@nasouth.ie">info@nasouth.ie</a></strong
-			</div>
-		</div>
+<div id="phoneline_card"></div>
+<script>
+  drawPhonelineCard();
+</script>
 
+<div id="links_card"></div>
+<script>
+  drawLinkCards();
+</script>
+
+</div> <!-- /container -->
     </div> <!-- /container -->
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
   </body>
 </html>
