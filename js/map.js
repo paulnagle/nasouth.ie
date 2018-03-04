@@ -239,7 +239,7 @@ function runSearch() {
 
 		DEBUG && console && console.log("**** 5 ****");
 
-		var formats_output = "<div class='table-responsive'><table class='table table-bordered table-striped table-condensed'>";
+		var formats_output = "<div class='table-responsive'><table class='table table-bordered table-dark table-striped table-condensed'>";
 		formats_output += "<thead><tr><th>Abbrev</th><th>Type</th><th>Description</th></tr></thead><tbody>";
 		$.each(format_hover_data, function(output_key, output_val) {
 			formats_output += "<tr><td>" + output_val.key_string + "</td><td>" + output_val.name_string + "</td><td>";
