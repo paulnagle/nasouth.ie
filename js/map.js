@@ -4,10 +4,11 @@ $( window ).load(function() {
 		max: 99,
 		value: 25,
 		animate: "fast"
-	}).slider("float", { suffix: "kms"});
+	}).slider("pips", { suffix: "kms", step: 5}).slider("float", { suffix: "kms"});
 
 	$( "#searchradius-slider" ).css('background', 'rgb(51,102,153)');
 	$( "#slider-range-max .ui-state-default, .ui-widget-content .ui-state-default" ).css( "background", '#eb6864');
+  $( "#searchradius-slider .ui-slider-handle").css( "z-index", "1000" );
 
 	$( "#searchradius-slider" ).on( "slidestop", function( event, ui ) {
 		searchRadius = $( "#searchradius-slider" ).slider( "value" );
@@ -108,7 +109,7 @@ function newMap() {
 	document.getElementById("map_canvas").style.height = "425px";
 
 	DEBUG && console && console.log("****Adding tile Layer to Map****");
-	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 
@@ -139,6 +140,7 @@ function getCurrentGPSLocation() {
 
 // This function generates the URL to query the BMLT based on the settings in the Settings Panel
 function buildSearchURL () {
+	// search_url = "https://na-bmlt.org/_/sandwich/client_interface/json/";
 	search_url = "https://www.nasouth.ie/bmlt/main_server/client_interface/json/";
 	search_url += "?switcher=GetSearchResults";
 	search_url += "&geo_width_km=" + searchRadius;
