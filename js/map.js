@@ -4,7 +4,7 @@ $( window ).load(function() {
 		max: 99,
 		value: 25,
 		animate: "fast"
-	}).slider("pips", { suffix: "kms", step: 5}).slider("float", { suffix: "kms"});
+	}).slider("pips", { suffix: "km", step: 5}).slider("float", { suffix: "km"});
 
 	$( "#searchradius-slider" ).css('background', 'rgb(51,102,153)');
 	$( "#slider-range-max .ui-state-default, .ui-widget-content .ui-state-default" ).css( "background", '#eb6864');
@@ -125,15 +125,18 @@ function dayOfWeekAsString(dayIndex) {
 // is found OK, the newMap() function is called with the location.
 function getCurrentGPSLocation() {
     DEBUG && console && console.log("****getCurrentGPSLocation()****");
+
     function success(location) {
-		DEBUG && console && console.log("****GPS location found");
-		myLatLng = L.latLng(location.coords.latitude, location.coords.longitude);
-		newMap();
+			DEBUG && console && console.log("****GPS location found");
+			myLatLng = L.latLng(location.coords.latitude, location.coords.longitude);
+			newMap();
     }
+
     function fail(error) {
-		DEBUG && console && console.log("****GPS location NOT found");  // Failed to find location, show default map
-		newMap();
-	}
+			DEBUG && console && console.log("****GPS location NOT found");  // Failed to find location, show default map
+			newMap();
+		}
+
 	// Find the users current position.  Cache the location for 5 minutes, timeout after 6 seconds
 	navigator.geolocation.getCurrentPosition(success, fail, {maximumAge: 500000, enableHighAccuracy:true, timeout: 6000});
 }

@@ -75,6 +75,7 @@ function drawLinkCards() {
 	linkCardsoutput += "   </div>";
 	linkCardsoutput += "  </div>";
 	linkCardsoutput += " </div>";
+	linkCardsoutput += " <br>";
 
 	document.getElementById("links_card").innerHTML = linkCardsoutput;
 
