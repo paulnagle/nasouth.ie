@@ -23,7 +23,7 @@ $( window ).load(function() {
   } );
 });
 
-var DEBUG = false;
+var DEBUG = true;
 
 // Dont forget to comment all of this
 var map = null;
@@ -51,8 +51,7 @@ var openTable  = "<div class='table-responsive'><table class='table table-border
 var closeTable = "</tbody></table></div></div>";
 
 var naIcon = L.MakiMarkers.icon({
-	icon: "star",
-	icon: "star",
+	icon: "marker",
 	color: "#f00",
 	size: "l"
 });
@@ -216,6 +215,7 @@ function runSearch() {
 	onlyMeetingsWithNoFormats = false;
 
 	buildSearchURL();
+  map.spin(true);
 
 	$.getJSON(search_url, function( data) {
 		DEBUG && console && console.log("**** 1 ****");
@@ -305,5 +305,6 @@ function runSearch() {
   	document.getElementById("list_result").innerHTML = result;
 
 		map.addLayer(markerClusterer);
+		map.spin(false);
 	});
 }
