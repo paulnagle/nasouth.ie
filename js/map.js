@@ -45,7 +45,7 @@ var satExpandLi = "";
 
 var format_hover_data = [];
 
-var raw_meeting_json = false;
+var onlyMeetingsWithNoFormats = false;
 
 var openTable  = "<div class='table-responsive'><table class='table table-bordered table-striped'><thead><tr><th>Meeting Name</th><th>Time</th><th>Location</th><th>Format</th><th>Directions</th></tr></thead><tbody>";
 var closeTable = "</tbody></table></div></div>";
@@ -143,8 +143,8 @@ function getCurrentGPSLocation() {
 
 // This function generates the URL to query the BMLT based on the settings in the Settings Panel
 function buildSearchURL () {
-	// search_url = "https://na-bmlt.org/_/sandwich/client_interface/json/";
-	search_url = "https://www.nasouth.ie/bmlt/main_server/client_interface/json/";
+	search_url = "https://na-bmlt.org/_/sandwich/client_interface/json/";
+	// search_url = "https://www.nasouth.ie/bmlt/main_server/client_interface/json/";
 	search_url += "?switcher=GetSearchResults";
 	search_url += "&geo_width_km=" + searchRadius;
 	search_url += "&long_val=" + myLatLng.lng;
@@ -213,7 +213,7 @@ function runSearch() {
 	satExpandLi = "";
 
 	format_hover_data = [];
-	raw_meeting_json = false;
+	onlyMeetingsWithNoFormats = false;
 
 	buildSearchURL();
 
@@ -238,8 +238,9 @@ function runSearch() {
 				format_hover_data.push(format_val);
 			});
 		} else {
-			DEBUG && console && console.log("**** NO formats returned ****");
-			raw_meeting_json = true;
+			DEBUG && console && console.log("**** Some meetings were returned, but NO formats were returned ****");
+			DEBUG && console && console.log("****" + " ? " + " ****");
+			onlyMeetingsWithNoFormats = true;
 		}
 
 		DEBUG && console && console.log("**** 5 ****");
@@ -261,14 +262,6 @@ function runSearch() {
 			$.each( data.meetings, function( key, val) {
 				processSingleJSONMeetingResult(val);
 			});
-		} else {
-			if (raw_meeting_json) {   // Only meetings with no formats were returned
-				DEBUG && console && console.log("****  ****");
-				$.each( data, function( key, val) {
-					processSingleJSONMeetingResult(val);
-				});
-			}
-			DEBUG && console && console.log("**** NO meetings were returned ****");
 		}
 
 		var result  = "<div class='tab-content' id='myTabContent'>";
