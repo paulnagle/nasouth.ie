@@ -23,7 +23,7 @@ $( window ).load(function() {
   } );
 });
 
-var DEBUG = true;
+var DEBUG = false;
 
 // Dont forget to comment all of this
 var map = null;
@@ -43,7 +43,7 @@ var thuExpandLi = "";
 var friExpandLi = "";
 var satExpandLi = "";
 
-var format_hover_data = [];
+var meeting_formats = [];
 
 var onlyMeetingsWithNoFormats = false;
 
@@ -142,8 +142,9 @@ function getCurrentGPSLocation() {
 
 // This function generates the URL to query the BMLT based on the settings in the Settings Panel
 function buildSearchURL () {
-	search_url = "https://na-bmlt.org/_/sandwich/client_interface/json/";
-	// search_url = "https://www.nasouth.ie/bmlt/main_server/client_interface/json/";
+	// search_url = "https://tomato.na-bmlt.org/main_server/client_interface/json/";
+  // search_url = "https://na-bmlt.org/_/sandwich/client_interface/json/";
+	search_url = "https://www.nasouth.ie/bmlt/main_server/client_interface/json/";
 	search_url += "?switcher=GetSearchResults";
 	search_url += "&geo_width_km=" + searchRadius;
 	search_url += "&long_val=" + myLatLng.lng;
@@ -156,7 +157,8 @@ function buildSearchURL () {
 
 
 function processSingleJSONMeetingResult(val) {
-	DEBUG && console && console.log("**** 7 ****");
+	DEBUG && console && console.log("**** processSingleJSONMeetingResult ******");
+
 	markerContent = "<li style='list-style-type: none !important'><h4>" + val.meeting_name + "</h4>";
 	markerContent += "<p><i>" + dayOfWeekAsString(val.weekday_tinyint)
 	markerContent += "&nbsp;" + val.start_time.substring(0, 5) + "</i>&nbsp;&nbsp;";
@@ -200,7 +202,9 @@ function processSingleJSONMeetingResult(val) {
 
 // This function runs the query to the BMLT and displays the results on the map
 function runSearch() {
-	DEBUG && console && console.log("****Running runSearch()****");
+	DEBUG && console && console.log("**** runSearch()****");
+
+  map.spin(true);
 
 	sunCount =0, monCount =0, tueCount = 0, wedCount = 0, thuCount = 0, friCount = 0, satCount = 0;
 	sunExpandLi = "";
@@ -211,57 +215,57 @@ function runSearch() {
 	friExpandLi = "";
 	satExpandLi = "";
 
-	format_hover_data = [];
+	meeting_formats = [];
 	onlyMeetingsWithNoFormats = false;
 
 	buildSearchURL();
-  map.spin(true);
 
 	$.getJSON(search_url, function( data) {
-		DEBUG && console && console.log("**** 1 ****");
+		DEBUG && console && console.log("**** runSearch() -> getJSON");
 
 		if (markerClusterer) {
 			map.removeLayer(markerClusterer);
 		}
-		DEBUG && console && console.log("**** 2 ****");
 
 		$("#list-results").empty();
-		DEBUG && console && console.log("**** 3 ****");
 
 		markerClusterer = new L.markerClusterGroup({showCoverageOnHover: false,
 													removeOutsideVisibleBounds: false});
-		DEBUG && console && console.log("**** 4 ****");
 
+    // Draw the formats table - Start
 		if (!jQuery.isEmptyObject(data.formats)) {
 			$.each( data.formats, function( format_key, format_val) {
-				DEBUG && console && console.log("**** Some formats returned ****");
-				format_hover_data.push(format_val);
+				DEBUG && console && console.log("**** Formats for this search ****" );
+				DEBUG && console && console.log(JSON.stringify(format_val));
+				meeting_formats.push(format_val);
+				onlyMeetingsWithNoFormats = false;
 			});
 		} else {
-			DEBUG && console && console.log("**** Some meetings were returned, but NO formats were returned ****");
-			DEBUG && console && console.log("****" + " ? " + " ****");
+			DEBUG && console && console.log("**** No formats for this search ****");
 			onlyMeetingsWithNoFormats = true;
 		}
 
-		DEBUG && console && console.log("**** 5 ****");
-
 		var formats_output = "<div class='table-responsive'><table class='table table-bordered table-dark table-striped table-condensed'>";
 		formats_output += "<thead><tr><th>Abbrev</th><th>Type</th><th>Description</th></tr></thead><tbody>";
-		$.each(format_hover_data, function(output_key, output_val) {
+		$.each(meeting_formats, function(output_key, output_val) {
 			formats_output += "<tr><td>" + output_val.key_string + "</td><td>" + output_val.name_string + "</td><td>";
 			formats_output += output_val.description_string + "</td></tr>";
 		});
 
-		DEBUG && console && console.log("**** 6 ****");
-
 		formats_output += "</tbody></table></div>";
 		document.getElementById("formats_table").innerHTML = formats_output;
+		// Draw the formats table - Stop
+
 
 		if (!jQuery.isEmptyObject(data.meetings)) {
 			DEBUG && console && console.log("**** Some meetings were returned ****");
+			DEBUG && console && console.log(JSON.stringify(data.meetings));
+
 			$.each( data.meetings, function( key, val) {
 				processSingleJSONMeetingResult(val);
 			});
+		} else {
+			DEBUG && console && console.log("**** No meetings were returned ****");
 		}
 
 		var result  = "<div class='tab-content' id='myTabContent'>";
@@ -303,6 +307,13 @@ function runSearch() {
 
 		result += "</div>";
   	document.getElementById("list_result").innerHTML = result;
+		document.getElementById("sunday-badge").innerHTML = sunCount;
+		document.getElementById("monday-badge").innerHTML = monCount;
+		document.getElementById("tuesday-badge").innerHTML = tueCount;
+		document.getElementById("wednesday-badge").innerHTML = wedCount;
+		document.getElementById("thursday-badge").innerHTML = thuCount;
+		document.getElementById("friday-badge").innerHTML = friCount;
+		document.getElementById("saturday-badge").innerHTML = satCount;
 
 		map.addLayer(markerClusterer);
 		map.spin(false);
