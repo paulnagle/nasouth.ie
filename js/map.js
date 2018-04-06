@@ -1,4 +1,4 @@
-var tomato_map_search = function () {
+var tomato_map_search = function ($) {
   "use strict";
 
 		$( window ).on('load', function() {
@@ -377,4 +377,4 @@ var tomato_map_search = function () {
 				mapInit();
 			}
 		};
-}();
+}( jQuery );

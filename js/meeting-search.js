@@ -3,7 +3,7 @@ openTable  = "<div class='table-responsive'><table class='table table-bordered t
 closeTable = "</tbody></table></div></div>";
 
 
-function drawNavigation() {
+var drawNavigation = function () {
 	var navOutput = "<nav class='navbar navbar-expand-md navbar-dark fixed-top' style='background-color: #336699;'>";
   navOutput += " <a class='navbar-brand' href='index.html'>NA Southern Area of Ireland</a>";
   navOutput += " <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation'>";
@@ -34,7 +34,7 @@ function drawNavigation() {
 	document.getElementById("nav_holder").innerHTML = navOutput;
 }
 
-function drawLinkCards() {
+var drawLinkCards = function () {
 	var linkCardsoutput = "<div class='row'>";
 	linkCardsoutput += "  <div class='col-sm'>";
 	linkCardsoutput += "    <div class='card'>";
@@ -81,7 +81,7 @@ function drawLinkCards() {
 
 }
 
-function drawPhonelineCard() {
+var drawPhonelineCard = function () {
 	var phonelineCardOutput = "<br><div class='card'><div class='card-header bg-danger text-white'>";
 		phonelineCardOutput +=	"<h3 class='card-title'>Phoneline</h3></div><div class='card-body'>";
 		phonelineCardOutput +=	"<strong>Phoneline : <a href='tel:0871386120'>087 – 138 6120</a></strong><br>";
@@ -95,11 +95,11 @@ function drawPhonelineCard() {
 }
 
 // This function converts a number to a day of the week
-function dayOfWeekAsString(dayIndex) {
+var dayOfWeekAsString = function (dayIndex) {
 	return ["not a day?", "Sun", "Mon","Tue","Wed","Thu","Fri","Sat"][dayIndex];
 }
 
-function drawFormatTable(data) {
+var drawFormatTable = function (data) {
 
 	var format_hover_data = [];
 
@@ -117,7 +117,7 @@ function drawFormatTable(data) {
 	document.getElementById("formats_table").innerHTML = formats_output;
 }
 
-function writeMeetingRow (val) {
+var writeMeetingRow = function  (val) {
 	meetingRow = "<tr>";
 	meetingRow += "<td>" + val.meeting_name + "</td>";
 	meetingRow += "<td>" + dayOfWeekAsString(val.weekday_tinyint)
@@ -132,7 +132,7 @@ function writeMeetingRow (val) {
 }
 
 // This function runs the query to the BMLT and displays the results on the map
-function runSearchDay() {
+var runSearchDay = function () {
 	var search_url = "https://www.nasouth.ie/bmlt/main_server/client_interface/json/";
 	search_url += "?switcher=GetSearchResults";
 	search_url += "&services=2";
@@ -212,7 +212,7 @@ function runSearchDay() {
 }
 
 // This function runs the query to the BMLT and displays the results on the map
-function runSearchCounty() {
+var runSearchCounty = function () {
 	var search_url = "https://www.nasouth.ie/bmlt/main_server/client_interface/json/";
 	search_url += "?switcher=GetSearchResults";
 	search_url += "&services=2";
