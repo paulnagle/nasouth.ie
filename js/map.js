@@ -1,4 +1,4 @@
-$( window ).load(function() {
+$( window ).on('load', function() {
 	$( "#searchradius-slider" ).slider({
 		min: 1,
 		max: 99,
@@ -9,6 +9,11 @@ $( window ).load(function() {
 	$( "#searchradius-slider" ).css('background', 'rgb(51,102,153)');
 	$( "#slider-range-max .ui-state-default, .ui-widget-content .ui-state-default" ).css( "background", '#eb6864');
   $( "#searchradius-slider .ui-slider-handle").css( "z-index", "1000" );
+	$( "#map_canvas").css("height", "425px");
+
+	var target = document.getElementById('map_canvas');
+	var spinner = new Spinner().spin(target);
+	$(target).data('spinner', spinner);
 
 	$( "#searchradius-slider" ).on( "slidestop", function( event, ui ) {
 		searchRadius = $( "#searchradius-slider" ).slider( "value" );
@@ -85,6 +90,7 @@ function newMap() {
 	map.on('load', function(e) {  // This is called when the map center and zoom are set
 		DEBUG && console && console.log("****map load event****");
 
+    $('#map_canvas').data('spinner').stop();
 		circle = L.circle(myLatLng, searchRadius * 1000, {fillOpacity: 0.1});
 		circle.addTo(map);
 		var circleBounds = new L.LatLngBounds;
@@ -105,7 +111,7 @@ function newMap() {
 		runSearch();
 	});
 
-	document.getElementById("map_canvas").style.height = "425px";
+
 
 	DEBUG && console && console.log("****Adding tile Layer to Map****");
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -142,9 +148,9 @@ function getCurrentGPSLocation() {
 
 // This function generates the URL to query the BMLT based on the settings in the Settings Panel
 function buildSearchURL () {
-	// search_url = "https://tomato.na-bmlt.org/main_server/client_interface/json/";
+	search_url = "https://tomato.na-bmlt.org/main_server/client_interface/json/";
   // search_url = "https://na-bmlt.org/_/sandwich/client_interface/json/";
-	search_url = "https://www.nasouth.ie/bmlt/main_server/client_interface/json/";
+	// search_url = "https://www.nasouth.ie/bmlt/main_server/client_interface/json/";
 	search_url += "?switcher=GetSearchResults";
 	search_url += "&geo_width_km=" + searchRadius;
 	search_url += "&long_val=" + myLatLng.lng;
@@ -152,6 +158,8 @@ function buildSearchURL () {
 	search_url += "&sort_key=sort_results_by_distance";
 	search_url += "&data_field_key=meeting_name,weekday_tinyint,start_time,location_text,location_street,location_info,distance_in_km,latitude,longitude,formats";
 	search_url += "&get_used_formats";
+	search_url += "&callingApp=nasouth.ie";
+
 	DEBUG && console && console.log("Search URL = "+ search_url);
 }
 
