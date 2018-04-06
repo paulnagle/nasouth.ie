@@ -227,31 +227,24 @@ var tomato_map_search = function () {
 			switch (e.target.dayOfWeek) {
 				case "1":
   				$("#myTab li:eq(0) a").tab('show');
-					console.log("Switching to : ", e.target.dayOfWeek);
 					break;
 				case "2":
 					$("#myTab li:eq(1) a").tab('show');
-					console.log("Switching to : ", e.target.dayOfWeek);
 					break;
 				case "3":
 					$("#myTab li:eq(2) a").tab('show');
-					console.log("Switching to : ", e.target.dayOfWeek);
 					break;
 				case "4":
 					$("#myTab li:eq(3) a").tab('show');
-					console.log("Switching to : ", e.target.dayOfWeek);
 					break;
 				case "5":
 					$("#myTab li:eq(4) a").tab('show');
-					console.log("Switching to : ", e.target.dayOfWeek);
 					break;
 				case "6":
 					$("#myTab li:eq(5) a").tab('show');
-					console.log("Switching to : ", e.target.dayOfWeek);
 					break
 				case "7":
 					$("#myTab li:eq(6) a").tab('show');
-					console.log("Switching to : ", e.target.dayOfWeek);
 					break;
 				}
 				$("tr").removeClass("table-primary");
