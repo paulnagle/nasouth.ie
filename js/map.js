@@ -31,7 +31,7 @@ var tomato_map_search = function () {
 		  } );
 		});
 
-		var DEBUG = true;
+		var DEBUG = false;
 
 		// Dont forget to comment all of this
 		var map = null;
