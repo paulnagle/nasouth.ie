@@ -255,6 +255,10 @@ var tomato_map_search = function ($) {
 		var runSearch = function () {
 			DEBUG && console && console.log("**** runSearch()****");
 
+      if (markerClusterer) {
+        map.removeLayer(markerClusterer);
+      }
+
 		  map.spin(true);
 
 			sunCount =0, monCount =0, tueCount = 0, wedCount = 0, thuCount = 0, friCount = 0, satCount = 0;
@@ -273,10 +277,6 @@ var tomato_map_search = function ($) {
 
 			$.getJSON(search_url, function( data) {
 				DEBUG && console && console.log("**** runSearch() -> getJSON");
-
-				if (markerClusterer) {
-					map.removeLayer(markerClusterer);
-				}
 
 				$("#list-results").empty();
 
