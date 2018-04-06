@@ -188,7 +188,7 @@ var tomato_map_search = function () {
 			markerContent += '<a href="http://maps.google.com/maps?';
 			markerContent += '&daddr='
 			markerContent += val.latitude + ',' + val.longitude;
-			markerContent += '">Directions</a></li>';
+			markerContent += '"  target="_blank">Directions</a></li>';
 
 			var listContent = "<tr  id='" + resultID + "' >";
 			listContent += "<td>" + val.meeting_name + "</td>";
@@ -199,7 +199,7 @@ var tomato_map_search = function () {
 			listContent += "<td>" + val.formats + "</td>";
 			listContent += '<td><a href="http://maps.google.com/maps?daddr=';
 			listContent += val.latitude + ',' + val.longitude;
-			listContent +='">Directions </a></li></td>';
+			listContent +='"  target="_blank">Directions </a></li></td>';
 			listContent += "</tr>";
 
 			switch (val.weekday_tinyint) {
